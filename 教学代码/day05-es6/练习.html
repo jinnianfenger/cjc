@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="aa"></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+
+        //解构赋值
+        // let arr=[1,2,3,4]
+        // let [a,b,c,d,e]=arr
+        // console.log(a,b,c,d)//1 2 3 4
+        // console.log(arr)//1 2 3 4
+        // console.log(e)//undefined
+
+
+
+        // let [a=1,b=2,c=3,d=4]=[10,20,30]
+        // console.log(a,b,c,d)//10 20 30 4
+
+        // let {f,h}={f:1,h:2}
+        // console.log(f,h)
+
+        // let a=1,b=2
+        // console.log({a:a,b:b})
+        // console.log({a,b})
+
+        // let{f:a,h:b}={f:1,h:2}
+        // console.log(f,h)
+        // console.log(a,b)
+
+
+        // let [a,b,c,...d]=[1,2,3,4,5,6,6,7,7,8]
+        // console.log(a,b,c,d)
+
+        // let[f=h,h=2]
+        // console.log(h)//报错
+
+
+        // let {a,b,c}={a:1,b:2,c:3}
+        // console.log(a,b,c)
+
+        // let a=1,b=2
+        // console.log({a:1,b})
+
+        // let obj={f:'a',h:'b'}
+        // let{f,h}=obj
+        // console.log(f,h)
+        // let obj1={f:1,h:2}
+        // let {f:newf,h:newh}=obj1
+        // // console.log(f,h)
+        // console.log(newf,newh)
+
+        // let {x,y=10}={}
+        // console.log(x,y)
+
+        // let obj={x:1,y:2,b:[1,4,5]}
+        // let{
+        //     x,
+        //     y,
+        //     b:[b1,b2,b1],
+        // }=obj
+        // console.log(x,y,b)
+
+        // let arr=[1,2,3,4,5,6];
+        // let {0:start,[arr.length-1]:last}=arr
+        // console.log(start,last)
+
+
+        // function fn(){
+        //     return [1,2,3,4,5,6]
+        // }
+        // let[a,b,c,d,e,f]=fn()
+        // console.log(a,b,c,d,e,f)
+
+        // function fn(){
+        //     return {f:1,h:2}
+        // }
+        // let {f}=fn();
+        // console.log(f)
+
+        // function fn([x,y,z]){
+        //     console.log(x,y,z)
+        // }
+        // fn([1,2,3])
+
+
+        // function fn({x,y,z}){
+        //     console.log(x,y,z)
+        // }
+        // fn({x:1,y:2,z:3})
+
+        // let json={
+        //     name:'zs',
+        //     age:18,
+        //     sex:'男'
+        // }
+        // let {name,age,sex}=json
+        // console.log(name,age,sex)
+
+
+
+        //模板字符串
+        // let a = {
+        //     message: {
+        //         title: "今天天气真好",
+        //         todo: "我们去看日落吧",
+        //         timi: "2020.11.14",
+        //         isLick: false
+        //     }
+        // }
+        // let str = `<div>
+        //             <h2>${a.message.title}</h2> 
+        //             <p>${a.message.todo}</p>
+        //             <p>${a.message.timi}</p>
+        //             <p>${a.message.isLick?"好啊":"不好"}</p>
+        //            </div>`
+
+        //     document.getElementById('aa').innerHTML = str
+
+
+        //字符串方法
+        // let {log}=console
+        // let a="   2  45  7 8 8  "
+        // console.log(a.trim())//去两边空格
+        // log(a.trim())
+        // log(a.trimStart())//去前空格
+        // log(a.trimEnd())//去后空格
+        // log(a.startsWith("45"))
+        // log(a.startsWith(""))//true 判断开头有没有包含某个字符串
+        // log(a.endsWith(" "))//true 判断结尾有没有包含某个字符串
+        // log(a.includes(""))//true 判断是否有某个字符串
+
+
+        // let a="一起去看日出吗"
+        // log(a.repeat(5))//重复当前字符
+        // log(a.padStart(8,"*"))//当字符不够字符长度的时候再前面补充任意字符
+        // log(a.padEnd(9,"|"))//当字符不够字符长度的时候再后面补充任意字符
+
+
+
+        //数组方法
+        // let lis=document.getElementsByTagName("li")
+        // console.log(lis)
+        // lis =Array.from(lis)
+        // console.log(lis)
+        // lis.forEach(function(item,index){
+        //     console.log(item)
+        // })
+
+
+        // let arr=[1,2,3]
+        // let otharr=['a','b','c']
+        // console.log(arr)
+        // console.log(...arr)
+
+        // console.log(...[1,2,...[3,4,5,...[6]]],7)//展开数组
+
+        // function fn(x,y,z){
+        //     console.log(x,y,z)
+        // }
+        // fn(...arr)
+
+        // let arr1=[...arr]
+        // let newArr=[...arr,...otharr]
+        // console.log(newArr)
+
+        // let arr2=[...'hello']
+        // console.log(arr2)
+
+
+        // {
+        //     let arr=[1,2,3,4,5,6,7,8]
+        //     arr.copyWithin(0,2,3)//将第0位开始的数用第2位到第3位的数开始覆盖不包括第3位
+        //     console.log(arr)
+        // }
+
+        // {
+        //     let arr=[1,2,3,4,5,6,7,8]
+        //     arr.copyWithin(0,2)//从第0位位开始将第二位的数向前覆盖
+        //     console.log(arr)
+
+        // }
+
+        // {
+        //   let arr = [1, 2, 3, 4, 5, 6, 7, 8]
+        //   arr.copyWithin(1)
+        //   console.log(arr) //  [1, 1, 2, 3, 4, 5, 6, 7]
+        // }
+
+        // {
+        //   let arr2 = [1, 2, 3, 4, 5, 6, 7, 8]
+        //   arr2.fill('a',2,4)//将a填充在第2位开始到第4位之前结束
+        //   console.log(arr2)
+        // }
+
+        // let arr4 = [1, false, {}, 'd', 'e']
+        // let result = arr4.find(function (item, index, arr) {
+        //   console.log(item, index, arr)
+        //   return typeof item == 'string'//遍历出字符串类型的值然后才输出
+        // })
+        // console.log(result)
+
+
+        // let arr4 = [
+        //   { name: 'xiaowang1' },
+        //   { name: 'xiaowang2' },
+        //   { name: 'xiaowang3' },
+        // ]
+        // let result = arr4.findIndex(function (item, index, arr) {
+        //   return item.name === 'xiaowang2'//遍历出数据所在的下标
+        // })
+        // console.log(result)
+
+
+        // {
+        //     let arr=[1,2,[3,4]]
+        //     console.log(arr.flat())
+        // }
+        // {
+        //     let arr=[1,[2,[3,[4,[5,[6,[7,[8]]]]]]]]
+        //     console.log(arr.flat(Infinity))//flat用来拉平多维数组infinity拉平无限维的数组
+        // }
+
+
+
+        // function fn(a,b="world"){
+        //     console.log(a,b)
+        // }
+        // fn("hello")//hello world
+        // fn()//undefined world
+        // fn("")// world
+
+        // function fn(a,b,...arg){//...变量 可以接受剩余的实参
+        //     console.log(a,b,arg)
+        // }
+        // fn(1,2,3,4,5,6,7,8,9,10)
+
+
+        // let [name,age,sex]=["zs","18","nan"]
+        // let p2 = {
+        //     name: "zs",
+        //     age: 18,
+        //     sex: "nv"
+        // }
+        // console.log(p2);
+
+
+
+        // let a = "name";
+        // let b = "sex";
+        // let p6 = {
+        //     [a]: "laowang",
+        //     [b + "1"]: "nv"
+        // }
+        // console.log(p6)
+
+
+        let name = Symbol("name");
+        let todo = Symbol("todo");
+        let obj = {
+            name: "小王"
+        }
+        obj[name] = "老王"
+
+        console.log(obj);
+        console.log(obj.name)
+        console.log(obj[name])
+    </script>
+</body>
+
+</html>

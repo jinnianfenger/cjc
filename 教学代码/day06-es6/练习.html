@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按下</button>
+    <div id="box"></div>
+    <script>
+        // let Btn = document.getElementById('btn')
+        // Btn.onclick = function () {
+        //     const promise = new Promise((resolve, reject) => {
+        //         console.log('promie执行了')
+
+        //         setTimeout(() => {
+
+
+        //             // resolve('ok')
+        //             reject('fail')
+
+        //             // console.log(promise)
+        //         }, 1000);
+
+        //     })
+        //     console.log(1, promise)
+        //     promise
+
+        //         .then(
+        //             (value) => {
+        //                 console.log('promise成功了', value)
+        //                 return new Promise((resolve, reject) => {
+        //                     resolve('promise-xxx')
+        //                 })
+        //             },
+        //             (value) => {
+        //                 console.log('promise失败了', value)
+        //                 return new Promise((resolve, reject) => {
+        //                     resolve('promise-xxx')
+
+        //                 })
+        //             }
+        //         )
+
+        //         .then(
+        //             (value) => {
+        //                 console.log('promise2', '成功了', value)
+        //             },
+        //             (value) => {
+        //                 console.log('promise2', '失败了', value)
+        //             }
+
+        //         )
+        //         .then(
+        //             (value) => {
+        //                 console.log('成功了')
+        //             },
+        //             (value) => {
+        //                 console.log('失败了')
+        //             }
+        //         )
+
+        // }
+
+
+        // let arr={
+        //     name:'张三',
+        //     age:18
+        // }
+
+        // function getData(){
+        //     return new Promise((resole,reject)=>{
+
+        //         setTimeout(()=>{
+        //             resole('网络异常')
+        //         },2000)
+        //     })
+        // }
+        // let oBtn=document.getElementById('btn')
+        // let oBox=document.getElementById('box')
+
+        // btn.onclick=async function(){
+        //     try{
+
+        //         let res=await getData()
+        //         let str=`<h1>${arr.name}</h1><h3>${arr.age}</h3>`
+        //         oBox.innerHTML=str
+        //     }catch(err){
+        //         oBox.innerHTML=`<h1>${err}</h1>`
+        //     }
+
+        // }
+
+
+
+        // setTimeout(() => {
+        //     console.log('setTimenout callback')
+        // }, 0)
+        // Promise.resolve(1).then((value) => console.log('onResolved1', value))
+        // Promise.resolve(2).then((value) => console.log('onResolved2', value))
+        // console.log('主线程')
+
+        // 主线程
+        // onResolved1 1
+        // onResolved2 2
+        // setTimenout callback
+
+
+
+
+        // setTimeout(() => {
+        //     console.log('setTimeout callback1')
+        // })
+        // setTimeout(() => {
+        //     console.log('setTimeout callback2')
+        // })
+        // Promise.resolve(1).then((value) => console.log('onResolved1', value))
+        // Promise.resolve(2).then((value) => console.log('onResolved1', value))
+        // console.log('主线程')
+
+        // 主线程
+        // onResolved1 1
+        // onResolved1 2
+        // setTimeout callback1
+        // setTimeout callback2
+
+
+
+
+
+
+        // setTimeout(()=>{
+        //     console.log('setTimeout callback1')
+        //     Promise.resolve(5).then((value)=>console.log('onResolved5'))
+
+        // })
+        // setTimeout(()=>{
+        //     console.log('setTimeout callback2')
+        // })
+        // Promise.resolve(3).then((value)=>console.log('onResolved3'))
+        // Promise.resolve(4).then((value)=>console.log('onResolved4'))
+
+        //onResolved3
+        //onResolved4
+        //setTimeout callback1
+        // onResolved5
+        // setTimeout callback2
+
+        
+        
+
+        // setTimeout(()=>{
+        //     console.log(1)
+        //     console.log(6)
+        // },0)
+        // Promise.resolve().then(()=>{
+        //     console.log(2)
+        //     console.log(5)
+        // })
+        // Promise.resolve().then(()=>{
+        //     console.log(4)
+        // })
+        // console.log(3)
+        //3 2 5 4 1 6
+
+
+        // setTimeout(()=>{
+        //     console.log(1)
+        // },0)
+        // new Promise((resolve)=>{
+        //     console.log(2)
+        //     resolve()
+        // })
+        // .then(()=>{
+        //     console.log(3)
+        // })
+        // .then(()=>{
+        //     console.log(4)
+        // })
+        // console.log(5)
+
+        //2 5 3 4 1
+
+
+
+        const first = () => {
+        return new Promise((resolve, reject) => {
+          console.log(3)
+          let p = new Promise((resolve, reject) => {
+            console.log(7)
+            setTimeout(() => {
+              console.log(5)
+              resolve(6)
+            }, 0)
+            resolve(1)
+          })
+          resolve(2)
+          p.then((arg) => {
+            console.log(arg)
+          })
+        })
+      }
+
+      first().then((arg) => {
+        console.log(arg)
+      })
+      console.log(4)
+    // 3 7 4 1 2 5
+    </script>
+
+</body>
+
+</html>

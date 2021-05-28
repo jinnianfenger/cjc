@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      margin-bottom: 10px;
+      position: absolute;
+      left: 10px;
+    }
+    #wg {
+      top: 50px;
+    }
+    #tt {
+      top: 300px;
+    }
+
+    span{
+      color:red;
+      margin-top:20px;
+      display:block;
+    }
+  </style>
+  <script src="jquery-1.12.4.min.js"></script>
+  <script>
+    $(function () {
+      $('#start').click(function() {
+        
+      
+        $('#wg').animate({
+          left: 800
+        }, 10000, 'linear');
+        
+        $('#tt').animate({
+          left: 800
+        }, 10000, 'swing');
+        
+      })
+      
+    });
+  </script>
+</head>
+<body>
+龟兔赛跑 <input type="button" id='start' value="预备开始">
+
+<div id="wg">
+奔跑吧, 污龟<br>
+
+<span>easing: linear</span><br>
+        
+        
+linear (线性) 匀速
+
+</div>
+<div id="tt">
+奔跑吧, 兔兔<br>
+
+<span>easing: swing</span><br>
+
+swing (秋千) 先慢  再快  再慢
+       
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        var arr = [
+            {
+                name: 'zs',
+                age: 18,
+            },
+            {
+                name: 'ls',
+                age: 22,
+            },
+            {
+                name: 'ww',
+                age: 30,
+            },
+            {
+                name: 'zl',
+                age: 16,
+            },
+            {
+                name: 'tq',
+                age: 99,
+            },
+            {
+                name: 'wb',
+                age: 99999,
+            },
+        ]
+
+        let result=arr.reduce=(function(preValue,item){
+            preValue[item.name]=item.age
+            return preValue
+        },{})
+        console.log(result)
+    </script>
+</body>
+
+</html>
